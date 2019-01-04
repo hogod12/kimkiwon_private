@@ -107,6 +107,7 @@ exports.login = async (req, res) => {
 }
 
 exports.logout = async (req, res) => {
+	console.log(req.session)
 	req.session.destroy((err) => {
 		if (err) {
 			console.log(err)
