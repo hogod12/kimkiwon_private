@@ -1,0 +1,41 @@
+<!-- Breadcrumbs-->
+<ol class="breadcrumb">
+  <li class="breadcrumb-item active">질문게시판</li>
+</ol>
+
+<div class="card mb-3">
+  <div class="card-header">
+    <i class="fas fa-table"></i>
+    질문목록
+  </div>
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+        <thead>
+          <tr>
+            <th>번호</th>
+            <th>이름</th>
+            <th>학교</th>
+            <th>등록일</th>
+            <th>답변여부</th>
+            <th>답변 및 수정</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% for (var i in data["question_data_list"]) { %>
+          <tr>
+            <td><%= data["question_data_list"][i]["question_index"] %></td>
+            <td><%= data["question_data_list"][i]["questioner_name"] %></td>
+            <td><%= data["question_data_list"][i]["questioner_school"] %></td>
+            <td><%= data["question_data_list"][i]["question_date_time"] %></td>
+            <td><%= data["question_data_list"][i]["is_answer"] %></td>
+            <td><a href="answer?question_index=<%= data["question_data_list"][i]["question_index"] %>">답변 및 수정</a></td>
+          </tr>
+          <% } %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+</div>

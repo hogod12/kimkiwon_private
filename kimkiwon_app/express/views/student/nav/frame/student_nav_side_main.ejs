@@ -1,0 +1,11 @@
+<!-- Sidebar -->
+<ul class="sidebar navbar-nav">
+  <% for (var i in data['nav_result_list']) { %>
+  <li class="nav-item active">
+    <a class="nav-link" href="student/report?result_index=<%= data['nav_result_list'][i]["result_index"] %>">
+      <i class="fas fa-fw fa-tachometer-alt"></i>
+      <span><%= data['nav_result_list'][i]["exam_name"] %></span>
+    </a>
+  </li>
+  <% } %>
+</ul>

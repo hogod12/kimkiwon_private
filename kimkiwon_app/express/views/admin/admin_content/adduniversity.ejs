@@ -1,0 +1,59 @@
+<!-- Breadcrumbs-->
+<ol class="breadcrumb">
+  <li class="breadcrumb-item active">대학정보추가</li>
+</ol>
+
+<form action="adduniversitydata" method="post">
+  <div class="card mb-3">
+    <div class="card-header"><i class="fas fa-table"></i>개요입력</div>
+    <div class="card-body">
+
+      <div class="form-group">
+        <div class="form-label-group">
+          <a>대학교명</a>
+          <input type="text" id="university_name" class="form-control" required="required" name="university_name" autofocus="autofocus">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="form-label-group">
+          <a>학과</a>
+          <input type="text" id="university_department" class="form-control" required="required" name="university_department" autofocus="autofocus">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="form-label-group">
+          <a>분류라벨</a>
+          <input type="text" id="university_category_label" class="form-control" required="required" name="university_category_label" autofocus="autofocus">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="form-label-group">
+          <a>입시년도</a>
+          <input type="text" id="university_year" class="form-control" required="required" name="university_year" autofocus="autofocus">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="form-label-group">
+          <a>입학정원</a>
+          <input type="number" id="university_limit" class="form-control" required="required" name="university_limit" autofocus="autofocus">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="form-label-group">
+          <a>학교평가점수</a>
+          <input type="number" min="0" max="100" id="university_score" class="form-control" required="required" name="university_score" autofocus="autofocus">
+        </div>
+      </div>
+
+    </div>
+    <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+  </div>
+
+
+  <input type="submit" class="btn btn-primary" value="대학정보입력">
+</form>

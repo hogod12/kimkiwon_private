@@ -1,0 +1,98 @@
+<!-- Breadcrumbs-->
+<ol class="breadcrumb">
+  <li class="breadcrumb-item active">시험추가</li>
+</ol>
+
+<form action="addexamdata" method="post">
+  <div class="card mb-3">
+    <div class="card-header"><i class="fas fa-table"></i>개요입력</div>
+    <div class="card-body">
+
+      <div class="form-group">
+        <div class="form-label-group">
+          <select name="curriculum_index" class="form-control" style="width:300px">
+            <option value="-1" disabled="disabled" selected="selected">커리큘럼</option>
+            <% for (var i in data["curriculum_list"]) { %>
+              <option value="<%=data["curriculum_list"][i]["curriculum_index"]%>">[<%= data["curriculum_list"][i]["curriculum_year"] %>] <%=data["curriculum_list"][i]["curriculum_name"]%></option>
+            <% } %>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="form-label-group">
+          <select name="exam_type" class="form-control" style="width:300px">
+            <option value="-1" disabled="disabled" selected="selected">시험타입</option>
+            <option value=1>겨울특강</option>
+            <option value=2>정규반</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="form-label-group">
+          <a>시험분류라벨</a>
+          <input type="text" id="exam_category_label" class="form-control" required="required" name="exam_category_label" autofocus="autofocus">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="form-label-group">
+          <a>시험이름</a>
+          <input type="text" id="exam_name" class="form-control" required="required" name="exam_name" autofocus="autofocus">
+        </div>
+      </div>
+
+    </div>
+    <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+  </div>
+
+  <!-- DataTables Example -->
+  <div class="card mb-3">
+    <div class="card-header"><i class="fas fa-table"></i>문항입력</div>
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+          
+          <thead>
+            <tr>
+              <th>문항</th>
+              <th>문제설명</th>
+              <th>배점</th>
+            </tr>
+          </thead>
+          
+          <script>
+            function add_row() {
+              var new_tr = document.getElementById("probList")
+              var row = new_tr.insertRow(new_tr.rows.length)
+              var cell1 = row.insertCell(0)
+              var cell2 = row.insertCell(1)
+              var cell3 = row.insertCell(2)
+
+              cell1.innerHTML = `<input type="text" class="form-control" name="exam_problem_label[]">`
+              cell2.innerHTML = `<input type="text" class="form-control" name="exam_problem_desc[]">`
+              cell3.innerHTML = `<input type="number" class="form-control" name="exam_problem_mark[]">`
+            }
+
+            function delete_row() {
+              var new_tr = document.getElementById("probList")
+              if (new_tr.rows.length < 2) return
+              new_tr.deleteRow(new_tr.rows.length-1);
+            }
+          </script>
+          
+          <tbody id=probList>
+            
+          </tbody>
+
+        </table>
+        <input type="button" class="btn btn-primary" value="문항 추가" onclick="add_row()">
+        <input type="button" class="btn btn-danger" value="문항 제거" onclick="delete_row()">
+      </div>
+    </div>
+    <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+  </div>
+
+  <input type="submit" class="btn btn-primary" value="시험 추가">
+</form>

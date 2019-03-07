@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../header.ejs', {title : '학생 페이지'}) -%>
+  </head>
+  <body>
+    <%- include('./nav/frame/nav_top.ejs', {page_type : 'Student'}) -%>
+    <div id="wrapper">
+    <%- include('./nav/frame/student_nav_side.ejs') -%>
+      <div id="content-wrapper">
+        <div class="container-fluid">
+          <%- include('./student_content/report.ejs') -%>
+        </div>
+      </div>
+    </div>
+    <%- include('../component/logout_modal.ejs') -%>
+    <%- include('../core.ejs') -%>
+    <!-- 테이블 플러그인 -->
+    <script src="/vendor/datatables/jquery.dataTables.js"></script>
+    <script src="/vendor/datatables/dataTables.bootstrap4.js"></script>
+    <script src="/javascripts/datatables-demo.js"></script>
+    <!-- 차트 플러그인 -->
+    <script src="/vendor/chart.js/Chart.min.js"></script>
+
+    <script type="text/javascript">
+      var data = <%- JSON.stringify(data) %>
+    </script>
+    
+    <script data=data src="/javascripts/chart-bar-demo.js"></script>
+  </body>
+</html>

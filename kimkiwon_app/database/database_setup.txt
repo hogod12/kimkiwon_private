@@ -1,0 +1,98 @@
+<database>
+	<property>
+		host : hobeoung
+		database : aaa 
+	</property>
+	<table>
+		<property>
+			table_name : a
+			columns : [a,b,c]
+			primary_key : a
+		</property>
+
+		<column>
+			type : varchar(256),
+			property : [not null, auto_increment]
+		</column>
+		
+		<column>
+			type : int(20)
+			property : [unsigned]
+		</column>
+		
+		<column>
+			type : bigint(128)
+		</column>
+	</table>
+	<table>
+		<property>
+			table_name : a
+			columns : [a,b,c]
+			primary_key : a
+		</property>
+
+		<column>
+			type : varchar(256),
+			property : [not null, auto_increment]
+		</column>
+		
+		<column>
+			type : int(20)
+			property : [unsigned]
+		</column>
+		
+		<column>
+			type : bigint(128)
+		</column>
+	</table>
+</database>
+
+<database>
+	<property>
+		host : hobeoung
+		database : bbb
+	</property>
+	<table>
+		<property>
+			table_name : a
+			columns : [a,b,c]
+			primary_key : a
+		</property>
+
+		<column>
+			type : varchar(256),
+			property : [not null, auto_increment]
+		</column>
+		
+		<column>
+			type : int(20)
+			property : [unsigned]
+		</column>
+		
+		<column>
+			type : bigint(128)
+		</column>
+	</table>
+	<table>
+		<property>
+			table_name : a
+			columns : [a,b,c]
+			primary_key : a
+		</property>
+
+		<column>
+			type : varchar(256),
+			property : [not null, auto_increment]
+		</column>
+		
+		<column>
+			type : int(20)
+			property : [unsigned]
+		</column>
+		
+		<column>
+			type : bigint(128)
+		</column>
+	</table>
+</database>
+

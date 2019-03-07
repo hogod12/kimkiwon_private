@@ -1,0 +1,67 @@
+<!-- Breadcrumbs-->
+<ol class="breadcrumb">
+  <li class="breadcrumb-item active">유저 추가</li>
+</ol>
+
+
+
+<div class="card mb-3">
+  <div class="card-header"><i class="fas fa-table"></i>유저등록</div>
+  
+  <div class="card-body">
+    <form action="adduserdata" method="post">
+      <div class="form-group">
+        <div class="form-label-group">
+          <a>이름</a>
+          <input type="text" id="user_name" class="form-control" required="required" name="user_name" autofocus="autofocus">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="form-label-group">
+          <a>학교</a>
+          <input type="text" id="user_school" class="form-control" required="required" name="user_school">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="form-label-group">
+          <a>전화번호</a>
+          <input type="text" id="user_phonenumber" class="form-control" required="required" name="user_phonenumber">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="form-label-group">
+          <a>권한</a>
+          <input type="text" id="user_authority" class="form-control" required="required" name="user_authority">
+        </div>
+      </div>
+
+      <input type="submit" class="btn btn-primary" value="유저 추가">
+    </form>
+  </div>
+  
+  <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+</div>
+
+
+
+
+<div class="card mb-3">
+  <div class="card-header"><i class="fas fa-table"></i>유저엑셀등록</div>
+  
+  <div class="card-body">  
+    <form action="adduserdatabulk" method="post" enctype="multipart/form-data">      
+      <div class="form-group">
+        <div class="form-label-group">
+          <input type="file" id="user_excel" class="form-control" required="required" name="user_excel">
+        </div>
+      </div>
+
+      <input type="submit" class="btn btn-primary" value="엑셀 입력">
+    </form>
+  </div>
+
+  <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+</div>

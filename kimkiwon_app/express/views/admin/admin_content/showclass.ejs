@@ -1,0 +1,43 @@
+<!-- Breadcrumbs-->
+<ol class="breadcrumb">
+  <li class="breadcrumb-item active">반 목록<황li>
+</ol>
+
+<div class="card mb-3">
+  <div class="card-header">
+    <i class="fas fa-table"></i>
+    반 목록
+  </div>
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+        <thead>
+          <tr>
+            <th>코드</th>
+            <th>커리큘럼</th>
+            <th>스케줄(반)</th>
+            <th>연도</th>
+            <th>등록일</th>
+            <th>수정</th>
+            <th>삭제</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% for (var i in data['class_list']){ %>
+          <tr>
+            <td><%=data['class_list'][i]["class_index"]%></td>
+            <td><%=data['class_list'][i]["curriculum_name"]%></td>
+            <td><%=data['class_list'][i]["class_schedule"]%></td>
+            <td><%=data['class_list'][i]["class_year"]%></td>
+            <td><%=data['class_list'][i]["class_date"]%></td>
+            <td>수정</td>
+            <td>삭제</td>
+          </tr>
+          <% } %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+</div>

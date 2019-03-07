@@ -1,0 +1,51 @@
+<!-- Breadcrumbs-->
+<ol class="breadcrumb">
+  <li class="breadcrumb-item active">유저현황</li>
+</ol>
+
+<div class="card mb-3">
+  <div class="card-header">
+    <i class="fas fa-table"></i>
+    학생명단
+  </div>
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+        <thead>
+          <tr>
+            <th>코드</th>
+            <th>이름</th>
+            <th>학교</th>
+            <th>등록전화번호</th>
+            <th>권한</th>
+            <th>계정</th>
+            <th>비밀번호</th>
+            <th>등록일</th>
+            <th>수정</th>
+            <th>합격등록</th>
+            <th>삭제</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% for (var i in data['user_list']){ %>
+          <tr>
+            <td><%=data["user_list"][i]["user_index"]%></td>
+            <td><%=data["user_list"][i]["user_name"]%></td>
+            <td><%=data["user_list"][i]["user_school"]%></td>
+            <td><%=data["user_list"][i]["user_phonenumber"]%></td>
+            <td><%=data["user_list"][i]["user_authority"]%></td>
+            <td><%=data["user_list"][i]["user_id"]%></td>
+            <td><%=data["user_list"][i]["user_password"]%></td>
+            <td><%=data["user_list"][i]["user_date"]%></td>
+            <td>수정</td>
+            <td><a href="addacceptance?user_index=<%= data["user_list"][i]["user_index"] %>">합격등록</a></td>
+            <td><a href="deleteuserdata?user_index=<%= data["user_list"][i]["user_index"] %>">삭제</a></td>
+          </tr>
+          <% } %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+</div>

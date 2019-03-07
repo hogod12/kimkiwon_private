@@ -1,0 +1,82 @@
+<!-- Breadcrumbs-->
+<ol class="breadcrumb">
+  <li class="breadcrumb-item active">합격현황추가</li>
+</ol>
+
+<form action="addacceptancedata" method="post">
+  <div class="card mb-3">
+    <div class="card-header"><i class="fas fa-table"></i>합격현황입력</div>
+    <div class="card-body">
+
+      <div class="form-group">
+        <div class="form-label-group">
+          <a>학생명</a>
+          <input type="text" id="user_name" class="form-control" readonly="readonly" required="required" name="user_name" autofocus="autofocus" value=<%= data["user_name"] %>>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="form-label-group">
+          <a>학교</a>
+          <input type="text" id="user_school" class="form-control" readonly="readonly" required="required" name="user_school" autofocus="autofocus" value=<%= data["user_school"] %>>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="form-label-group">
+          <a>부모핸드폰</a>
+          <input type="text" id="user_phonenumber" class="form-control" readonly="readonly" required="required" name="user_phonenumber" autofocus="autofocus" value=<%= data["user_phonenumber"] %>>
+        </div>
+      </div>
+
+      <!-- 실적1 선택 -->
+      <div class="form-group">
+        <div class="form-label-group">
+          <a>실적1</a>
+          <select name="acceptance_index_1" class="form-control" style="width:300px">
+            <option value="<%= data["acceptance_index_1"] %>" selected="selected">대학-학과</option>
+            <option value="-1">실적삭제</option>
+            <% for (var i in data["university_list"]) { %>
+              <option value="<%=data["university_list"][i]["university_index"]%>">[<%= data["university_list"][i]["university_year"] %>] <%=data["university_list"][i]["university_name"]%> - <%=data["university_list"][i]["university_department"]%></option>
+            <% } %>
+          </select>
+          <a>[<%= data["university_data_selected_1"]["university_year"] %>] <%= data["university_data_selected_1"]["university_name"] %> - <%= data["university_data_selected_1"]["university_department"] %></a>
+        </div>
+      </div>
+
+      <!-- 실적2 선택 -->
+      <div class="form-group">
+        <div class="form-label-group">
+          <a>실적2</a>
+          <select name="acceptance_index_2" class="form-control" style="width:300px">
+            <option value="<%= data["acceptance_index_2"] %>" selected="selected">대학-학과</option>
+            <option value="-1">실적삭제</option>
+            <% for (var i in data["university_list"]) { %>
+              <option value="<%=data["university_list"][i]["university_index"]%>">[<%= data["university_list"][i]["university_year"] %>] <%=data["university_list"][i]["university_name"]%> - <%=data["university_list"][i]["university_department"]%></option>
+            <% } %>
+          </select>
+          <a>[<%= data["university_data_selected_2"]["university_year"] %>] <%= data["university_data_selected_2"]["university_name"] %> - <%= data["university_data_selected_2"]["university_department"] %></a>
+        </div>
+      </div>
+
+      <!-- 실적3 선택 -->
+      <div class="form-group">
+        <div class="form-label-group">
+          <a>실적3</a>
+          <select name="acceptance_index_3" class="form-control" style="width:300px">
+            <option value="<%= data["acceptance_index_3"] %>" selected="selected">대학-학과</option>
+            <option value="-1">실적삭제</option>
+            <% for (var i in data["university_list"]) { %>
+              <option value="<%=data["university_list"][i]["university_index"]%>">[<%= data["university_list"][i]["university_year"] %>] <%=data["university_list"][i]["university_name"]%> - <%=data["university_list"][i]["university_department"]%></option>
+            <% } %>
+          </select>
+          <a>[<%= data["university_data_selected_3"]["university_year"] %>] <%= data["university_data_selected_3"]["university_name"] %> - <%= data["university_data_selected_3"]["university_department"] %></a>
+        </div>
+      </div>
+
+    </div>
+    <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+  </div>
+
+  <input type="submit" class="btn btn-primary" value="합격현황추가">
+</form>

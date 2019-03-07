@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<%- include('../header.ejs', {title : '관리자 페이지'}) -%>
+	</head>
+	<body>
+		<%- include('./nav/frame/nav_top.ejs', {page_type : 'Admin'}) -%>
+		<div id="wrapper">
+		<%- include('./nav/frame/admin_nav_side.ejs') -%>
+			<div id="content-wrapper">
+				<div class="container-fluid">
+					<%- include('./admin_content/showexam.ejs') -%>
+				</div>
+			</div>
+		</div>
+		<%- include('../component/logout_modal.ejs') -%>
+		<%- include('../core.ejs') -%>
+		<script src="/vendor/datatables/jquery.dataTables.js"></script>
+		<script src="/vendor/datatables/dataTables.bootstrap4.js"></script>
+		<script src="/javascripts/datatables-demo.js"></script>
+	</body>
+</html>

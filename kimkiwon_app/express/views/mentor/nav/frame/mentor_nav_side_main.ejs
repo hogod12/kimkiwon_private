@@ -1,0 +1,11 @@
+<!-- Sidebar -->
+<ul class="sidebar navbar-nav">
+  <% for (var i in data['nav_exam_list']) { %>
+  <li class="nav-item active">
+    <a class="nav-link" href="mentor/questiontable?exam_index=<%= data['nav_exam_list'][i]["exam_index"] %>">
+      <i class="fas fa-fw fa-tachometer-alt"></i>
+      <span><%= data['nav_exam_list'][i]["exam_name"] %></span>
+    </a>
+  </li>
+  <% } %>
+</ul>

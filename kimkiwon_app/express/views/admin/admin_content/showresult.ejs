@@ -1,0 +1,73 @@
+<!-- Breadcrumbs-->
+<ol class="breadcrumb">
+  <li class="breadcrumb-item active">결과목록</li>
+</ol>
+
+
+<div class="card mb-3">
+  <div class="card-header">
+    <i class="fas fa-table"></i>
+    시험 별 검색
+  </div>
+  <div class="card-body">
+    
+    <form action="showresult">
+      <div class="form-group">
+        <div class="form-label-group">
+          <select name="exam_index" class="form-control" style="width:300px">
+            <option value="-1" disabled="disabled" selected="selected">시험선택</option>
+            <% for (var i in data["exam_list"]) { %>
+              <option value="<%=data["exam_list"][i]["exam_index"]%>">[<%= data["exam_list"][i]["exam_year"] %>] <%=data["exam_list"][i]["exam_name"]%></option>
+            <% } %>
+          </select>
+        </div>
+      </div>
+      <input type="submit" class="btn btn-primary" value="검색">
+    </form>
+      
+  </div>
+  <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+</div>
+
+<div class="card mb-3">
+  <div class="card-header">
+    <i class="fas fa-table"></i>
+    <%= data["cur_exam_name"] %>
+  </div>
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+        <thead>
+          <tr>
+            <th>코드</th>
+            <th>이름</th>
+            <th>학교</th>
+            <th>전화번호</th>
+            <th>점수</th>
+            <th>등록일</th>
+            <th>자세히</th>
+            <th>수정</th>
+            <th>삭제</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% for (var i in data['result_list']){ %>
+          <tr>
+            <td><%=data["result_list"][i]["result_index"]%></td>
+            <td><%=data["result_list"][i]["user_name"]%></td>
+            <td><%=data["result_list"][i]["user_school"]%></td>
+            <td><%=data["result_list"][i]["user_phonenumber"]%></td>
+            <td><%=data["result_list"][i]["result_sum"]%></td>
+            <td><%=data["result_list"][i]["result_date"]%></td>
+            <td>자세히</td>
+            <td>수정</td>
+            <td>삭제</td>
+          </tr>
+          <% } %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+</div>
