@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>SB Admin 2 - Charts</title>
+
+  <!-- Custom fonts for this template-->
+  <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+  <!-- Custom styles for this template-->
+  <link href="/css/sb-admin-2.min.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+  <!-- Page Wrapper -->
+  <div id="wrapper">
+
+    <!-- SideBar -->
+    <%- include('sidenav.ejs') -%>
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+      <!-- Main Content -->
+      <div id="content">
+        <!-- TopBar -->
+        <%- include('topnav.ejs') -%>
+
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+          <div class="col-mb-3">
+            <div class="card border-left-success shadow h-100 py-2">
+              <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                  <div class="col mr-2">
+
+                    <div class="text-xs font-weight-bold text-success text-uppercase mb-1">김기원T 수리논술</div>
+                    <div class="h4 mb-0 font-weight-bold text-gray-800"><%= content_data["exam"]["exam_name"] %> 결과</div>
+
+                    <hr>
+                    <hr>
+
+                    <div class="h5 mb-0 font-weight-bold text-gray-800">학생성적요약</div>
+
+                    <hr>
+
+                    <div class="row">
+
+                      <!-- Earnings (Monthly) Card Example -->
+                      <div class="col-xl-4 col-md-4 mb-4">
+                        <div class="card border-left-primary shadow h-100 py-2">
+                          <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                              <div class="col mr-2">
+                                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">원점수</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800"><%= content_data["result"]["result_sum"] %> / <%= content_data["exam"]["exam_problem_score_sum"] %></div>
+                              </div>
+                              <div class="col-auto">
+                                <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Earnings (Monthly) Card Example -->
+                      <div class="col-xl-4 col-md-4 mb-4">
+                        <div class="card border-left-success shadow h-100 py-2">
+                          <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                              <div class="col mr-2">
+                                <div class="text-xs font-weight-bold text-success text-uppercase mb-1">표준점수</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800"><%= content_data["result"]["result_std"] %></div>
+                              </div>
+                              <div class="col-auto">
+                                <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Earnings (Monthly) Card Example -->
+                      <div class="col-xl-4 col-md-4 mb-4">
+                        <div class="card border-left-warning shadow h-100 py-2">
+                          <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                              <div class="col mr-2">
+                                <div class="text-xs font-weight-bold text-success text-uppercase mb-1">등수</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800"><%= content_data["result"]["result_rank"] %> / <%= content_data["exam"]["exam_statistic_count"] %></div>
+                              </div>
+                              <div class="col-auto">
+                                <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <hr>
+
+                    <div class="h5 mb-0 font-weight-bold text-gray-800">시험통계</div>
+
+                    <hr>
+
+                    <div class="row">
+
+                      <!-- Earnings (Monthly) Card Example -->
+                      <div class="col-xl-4 col-md-4 mb-4">
+                        <div class="card border-left-primary shadow h-100 py-2">
+                          <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                              <div class="col mr-2">
+                                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">시험평균</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800"><%= content_data["exam"]["exam_statistic_average"] %></div>
+                              </div>
+                              <div class="col-auto">
+                                <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Earnings (Monthly) Card Example -->
+                      <div class="col-xl-4 col-md-4 mb-4">
+                        <div class="card border-left-success shadow h-100 py-2">
+                          <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                              <div class="col mr-2">
+                                <div class="text-xs font-weight-bold text-success text-uppercase mb-1">시험표준편차</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800"><%= content_data["exam"]["exam_statistic_std"] %></div>
+                              </div>
+                              <div class="col-auto">
+                                <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Earnings (Monthly) Card Example -->
+                      <div class="col-xl-4 col-md-4 mb-4">
+                        <div class="card border-left-warning shadow h-100 py-2">
+                          <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                              <div class="col mr-2">
+                                <div class="text-xs font-weight-bold text-success text-uppercase mb-1">시험표본수</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800"><%= content_data["exam"]["exam_statistic_count"] %></div>
+                              </div>
+                              <div class="col-auto">
+                                <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <hr>
+
+                    <!-- Bar Chart -->
+                    <div class="card shadow mb-4">
+                      <div class="card-header py-3">
+                        <h6 class="m-0 font-weight-bold text-primary">점수구간별 분포그래프</h6>
+                      </div>
+                      <div class="card-body">
+                        <div class="chart-bar">
+                          <canvas id="myBarChart"></canvas>
+                        </div>
+                      </div>
+                    </div>
+
+                    <hr>
+
+                    <div class="h5 mb-0 font-weight-bold text-gray-800">문항별결과</div>
+
+                    <hr>
+
+                    <!-- DataTales Example -->
+                    <div class="card shadow mb-4">
+                      <div class="card-header py-3">
+                        <h6 class="m-0 font-weight-bold text-primary">정오표</h6>
+                      </div>
+                      <div class="card-body">
+                        <div class="table-responsive">
+                          <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                            <thead>
+                              <tr>
+                                <th>문항번호</th>
+                                <th>학생점수</th>
+                                <th>배점</th>
+                                <th>득점률</th>
+                                <th>비고</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <% for (var i in content_data["exam"]["exam_problem_label_parsed"]) { %>
+                              <tr>
+                                <td><%=content_data["exam"]["exam_problem_label_parsed"][i]%></td>
+                                <td><%=content_data["result"]["result_score_parsed"][i]%></td>
+                                <td><%=content_data["exam"]["exam_problem_score_parsed"][i]%></td>
+                                <td><%= parseInt((content_data["result"]["result_score_parsed"][i]/content_data["exam"]["exam_problem_score_parsed"][i])*100) %>%</td>
+                                <td><%= content_data["exam"]["exam_problem_desc_parsed"][i] %></td>
+                              </tr>
+                              <% } %>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+
+                    <a class="btn btn-primary" href="question?result_index=<%= content_data["result"]["result_index"] %>"> 질문요청 </a>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /.container-fluid -->
+
+      </div>
+      <!-- End of Main Content -->
+
+      <!-- Footer -->
+      <footer class="sticky-footer bg-white">
+        <div class="container my-auto">
+          <div class="copyright text-center my-auto">
+            <span>Copyright &copy; Your Website 2019</span>
+          </div>
+        </div>
+      </footer>
+      <!-- End of Footer -->
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+  </div>
+  <!-- End of Page Wrapper -->
+
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+
+  <!-- Logout Modal-->
+  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+          <a class="btn btn-primary" href="/logout">Logout</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap core JavaScript-->
+  <script src="/vendor/jquery/jquery.min.js"></script>
+  <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Core plugin JavaScript-->
+  <script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for all pages-->
+  <script src="/js/sb-admin-2.min.js"></script>
+
+  <!-- Page level plugins -->
+  <script src="/vendor/chart.js/Chart.min.js"></script>
+
+  <!-- Page level custom scripts -->
+  <script type="text/javascript">
+    var content_data = <%- JSON.stringify(content_data) %>
+  </script>
+  <script data=content_data src="/js/demo/chart-bar-dist.js"></script>
+
+</body>
+
+</html>
